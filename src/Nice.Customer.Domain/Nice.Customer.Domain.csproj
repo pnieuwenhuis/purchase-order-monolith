@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <InjectioName>DomainServices</InjectioName>
+
+    <RootNamespace>Nice.Customer.Domain</RootNamespace>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <AnalysisLevel>latest-Recommended</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <InterceptorsPreviewNamespaces>$(InterceptorsPreviewNamespaces);Dapper.AOT;Microsoft.AspNetCore.Http.Generated</InterceptorsPreviewNamespaces>
+    <IsAotCompatible>true</IsAotCompatible>
+    <EnableRequestDelegateGenerator>true</EnableRequestDelegateGenerator>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="**\*.sql" />
+    <CompilerVisibleProperty Include="InjectioName" />
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+    
+    <ProjectReference Include="../Nice.Core/Nice.Core.csproj" />
+    <ProjectReference Include="../Nice.Postgres.Data/Nice.Postgres.Data.csproj" />
+  </ItemGroup>
+</Project>

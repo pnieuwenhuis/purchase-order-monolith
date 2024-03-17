@@ -1,0 +1,36 @@
+﻿  <Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <Nullable>enable</Nullable>
+    <InjectioName>DatabaseServices</InjectioName>
+
+    <PackageId>Nice.Postgres.Data</PackageId>
+    <PackageTags>Nice Framework</PackageTags>
+
+    <RootNamespace>Nice.Postgres.Data</RootNamespace>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <AnalysisLevel>latest-Recommended</AnalysisLevel>
+    <InterceptorsPreviewNamespaces>$(InterceptorsPreviewNamespaces);Dapper.AOT;Microsoft.AspNetCore.Http.Generated</InterceptorsPreviewNamespaces>
+    <IsAotCompatible>true</IsAotCompatible>
+    <EnableRequestDelegateGenerator>true</EnableRequestDelegateGenerator>
+    <EnableConfigurationBindingGenerator>true</EnableConfigurationBindingGenerator>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <CompilerVisibleProperty Include="InjectioName" />
+    <AssemblyAttribute Include="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage" />
+
+    <PackageReference Include="Dapper" Version="2.1.28" />
+    <PackageReference Include="Dapper.AOT" Version="1.0.31" />
+    <PackageReference Include="Evolve" Version="3.2.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.4" />
+    <PackageReference Include="Npgsql" Version="8.0.0" />
+    <PackageReference Include="AspNetCore.HealthChecks.NpgSql" Version="8.0.0" />
+
+    <ProjectReference Include="../Nice.Core/Nice.Core.csproj" />
+  </ItemGroup>
+</Project>

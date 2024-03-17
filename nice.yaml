@@ -1,0 +1,14 @@
+apiVersion: nice.io/v1beta1
+kind: ApiService
+metadata:
+  name: purchaseorder-service
+  version: v1
+  description: |
+    The purchase order API service is responsible for managing orders. Other entities it manages are the customers and the products.
+  annotations:
+    owner: team-superman
+spec:
+  buildType: dotnet8
+  deploymentType: api
+  ports:
+    http: 5000

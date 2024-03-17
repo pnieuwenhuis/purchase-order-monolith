@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InjectioName>AppServices</InjectioName>
+    <ContainerRepository>nice</ContainerRepository> <!--purchaseorder-service-->
+    <ContainerFamily>alpine</ContainerFamily>
+    
+    <ServerGarbageCollection>false</ServerGarbageCollection>   
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <AnalysisLevel>latest-Recommended</AnalysisLevel>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <PublishAot>true</PublishAot>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <CompilerVisibleProperty Include="InjectioName" />
+
+    <None Include="../../nice.yaml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+
+    <ProjectReference Include="../Nice.Core/Nice.Core.csproj" />
+    <ProjectReference Include="../Nice.PurchaseOrder.Domain/Nice.PurchaseOrder.Domain.csproj" />
+    <ProjectReference Include="../Nice.Customer.Domain/Nice.Customer.Domain.csproj" />
+    <ProjectReference Include="../Nice.Product.Domain/Nice.Product.Domain.csproj" />
+    <ProjectReference Include="../Nice.Postgres.Data/Nice.Postgres.Data.csproj" />
+  </ItemGroup>
+</Project>
