@@ -90,7 +90,7 @@ jobs:
         -p ContainerBaseImage=${{ env.BASE_IMAGE }} \
         -p:ContainerImageTags='"latest;${{ env.RELEASE_VERSION }}"' \
         -p ContainerRepository=${{ env.IMAGE_NAME }} \
-        -p:ContainerPort=5000 \
+        -p:ContainerPort=8080 \
         /t:PublishContainer
 
     

@@ -11,4 +11,4 @@ spec:
   buildType: dotnet8
   deploymentType: api
   ports:
-    http: 5000
+    http: 8080

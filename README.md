@@ -86,7 +86,7 @@ ASPNETCORE_ENVIRONMENT=development dotnet watch --tl --project src/Nice.Purchase
 ```
 
 After starting the service, an OpenAPI definition of all endpoints can be found
-at: `http://localhost:5000/internal/openapi/v1/definition.json`
+at: `http://localhost:8080/internal/openapi/v1/definition.json`
 
 ## Publication of the service
 

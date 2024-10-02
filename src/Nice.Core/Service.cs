@@ -136,7 +136,10 @@ public static partial class Service
         app.UseSwagger(c => c.RouteTemplate = $"{openApiBasePath}/{{documentName}}/definition.{{json|yaml}}");
         if (app.Environment.IsDevelopment())
         {
-            app.UseSwaggerUI(o => o.RoutePrefix = openApiBasePath);
+            app.UseSwaggerUI(o => {
+                o.RoutePrefix = openApiBasePath;
+                o.SwaggerEndpoint("v1/definition.json", "API v1");
+            });
         }
 
         app.MapPrometheusScrapingEndpoint("/internal/metrics");
